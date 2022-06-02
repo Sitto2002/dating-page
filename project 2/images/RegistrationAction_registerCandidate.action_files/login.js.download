@@ -1,0 +1,1650 @@
+function confirmUserInput(question)
+{
+	return confirm(question);
+}
+function HideAll()
+{
+	for(i = 0; i<=11; i++)
+	{
+		try
+		{
+			boxID = document.getElementById("block"+i);
+			boxID.style.display = "none";
+			if(i == 1)
+			{
+				document.register.reset();
+			}
+			if(i == 2)
+			{
+				document.forgorpwd.reset();
+			}
+		}
+		catch(e)
+		{}
+	}
+}
+
+function HideTabs()
+{
+	for(i = 0; i<=11; i++)
+	{
+		try
+		{
+			boxID = document.getElementById("block"+i);
+			boxID.style.display = "none";
+		}
+		catch(e)
+		{}
+	}
+}
+
+function payOption()
+{
+	var payVal = document.getElementById("paymentModeId").options;
+	var payIndex = document.getElementById("paymentModeId").selectedIndex;
+	for(i=1; i<=7; i++)
+	{
+		try
+		{
+			document.getElementById("gridDiv"+i).style.display="none";
+		}
+		catch(e)
+		{}
+	}
+	if(payVal[payIndex].value=="DD")
+	{
+		document.getElementById("gridDiv1").style.display="block";
+	}
+	else if(payVal[payIndex].value=="Challan")
+	{
+		document.getElementById("gridDiv2").style.display="block";
+	}
+	else
+	{
+		document.getElementById("gridDiv1").style.display="block";
+	}
+}
+
+function PopHideAll()
+{
+	for(i = 1; i<=10; i++)
+	{
+		try
+		{
+			boxID = document.getElementById("pop"+i);
+			boxID.style.display = "none";
+		}
+		catch(e)
+		{}
+	}
+}
+function ShowPop(popID)
+	{
+		PopHideAll();
+		boxID = document.getElementById(popID);
+		FadeboxID = document.getElementById("pop3");
+		FadeboxID.style.display = "block";
+		boxID.style.display = "block";
+		
+	}
+	
+	
+	function ForgotPwd()
+	{ 
+		var for_name = document.forgorpwd;
+		if(emailVal(for_name.email.value)==false)
+		{
+			document.getElementById("f-email").style.visibility="visible";
+			return false;
+		}
+		if(emailVal(for_name.email.value)!=false)
+		{
+			document.getElementById("f-email").style.visibility="hidden";
+			document.getElementById("block2").style.display="none";
+			document.getElementById("block8").style.display="block";
+			return true;
+		}
+	}
+	
+	function ChangePwd()
+	{ 
+		var change_pwd = document.changepwd;
+		if(change_pwd.oldpwd.value=='')
+		{
+			document.getElementById("pwd1").style.visibility="visible";
+			return false;
+		}
+		if(change_pwd.oldpwd.value!='')
+		{
+			document.getElementById("pwd1").style.visibility="hidden";
+		}
+		if(change_pwd.newpwd.value=='')
+		{
+			document.getElementById("pwd2").style.visibility="visible";
+			return false;
+		}
+		if(change_pwd.newpwd.value!='')
+		{
+			document.getElementById("pwd2").style.visibility="hidden";
+		}
+		if(change_pwd.newpwd.value!=change_pwd.confpwd.value)
+		{
+			document.getElementById("pwd3").style.visibility="visible";
+			return false;
+		}
+		if(change_pwd.newpwd.value!='')
+		{
+			document.getElementById("pwd3").style.visibility="hidden";
+		}
+	}
+	
+	
+	
+	function ShowBlock(blockID)
+	{
+		HideAll();
+		boxID = document.getElementById(blockID);
+		FadeboxID = document.getElementById("block7");
+		FadeboxID.style.display = "block";
+		boxID.style.display = "block"; 
+	}
+	/* Numeric Validation Start */
+	function mobileVal(num)
+	{
+		var ck_num = /^([0-9]{10})$/;
+		//var email = form.email.value;
+		if(!ck_num.test(num))
+		{
+			return false;
+		}
+	}
+	/* Numeric Validation End */
+	/* Pincode Validation Start */
+	function pincodeVal(num)
+	{
+		var ck_num = /^([0-9]{6})$/;
+		//var email = form.email.value;
+		if(!ck_num.test(num))
+		{
+			return false;
+		}
+	}
+	/* Pincode Validation End */
+	
+	
+	/* Validate Email Start */
+	function emailVal(email)
+	{
+		var ck_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		//var email = form.email.value;
+		if(!ck_email.test(email))
+		{
+			return false;
+		}
+	}
+	/* Validate Email End*/
+	
+	/* Date Val Start */
+	function dateVal(form)
+	{
+		// regular expression to match required date format
+		re = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+		if(form.value != '')
+		{
+			if(regs = form.value.match(re))
+			{
+				// day value between 1 and 31
+				if(regs[1] < 1 || regs[1] > 31)
+				{
+					return false;
+				}
+				// month value between 1 and 12
+				if(regs[2] < 1 || regs[2] > 12)
+				{
+					return false;
+				}
+				/*
+				year value between 1902 and 2011
+				if(regs[3] < 1902 || regs[3] > (new Date()).getFullYear())
+				{
+					alert("Invalid value for year: " + regs[3] + " - must be between 1902 and " + (new Date()).getFullYear());
+					form.focus();
+					return false;
+				}*/
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+
+	/* Date Val End */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	function loginVal()
+	{
+		if(document.login.username.value =='')
+		{
+			document.getElementById("loginID").style.visibility="visible";
+			return false;
+		}
+		if(document.login.username.value !=='')
+		{
+			document.getElementById("loginID").style.visibility="hidden";
+		}
+		if(document.login.password.value =='')
+		{
+			document.getElementById("loginPWD").style.visibility="visible";
+			return false;
+		}
+		if(document.login.password.value !=='')
+		{
+			document.getElementById("loginPWD").style.visibility="hidden";
+		}
+		else
+		{
+			return true;
+		}
+	}
+	/* Register Validation */
+	function registerVal()
+	{
+		fnameVal = document.register;
+		
+		if(fnameVal.firstName.value == '')
+		{
+			document.getElementById("fnameID").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.firstName.value != '')
+		{
+			document.getElementById("fnameID").style.visibility="hidden";
+		}
+		if(fnameVal.lastName.value == '')
+		{
+			document.getElementById("lnameID").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.lastName.value != '')
+		{
+			document.getElementById("lnameID").style.visibility="hidden";
+		}
+		if(fnameVal.mmName.value == '')
+		{
+			document.getElementById("mnameID").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.mmName.value != '')
+		{
+			document.getElementById("mnameID").style.visibility="hidden";
+		}
+		if(dateVal(document.register.dob) == false)
+		{
+			document.getElementById("dobID").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.dob.value =='')
+		{
+			document.getElementById("dobID").style.visibility="visible";
+			return false;
+		}
+		if(dateVal(document.register.dob) != false)
+		{
+			document.getElementById("dobID").style.visibility="hidden";
+		}
+		if(fnameVal.gender.value =='')
+		{
+			document.getElementById("genderID").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.gender.value != '')
+		{
+			document.getElementById("genderID").style.visibility="hidden";
+		}
+		if(mobileVal(fnameVal.mobileNumber.value) == false)
+		{
+			document.getElementById("mobileID1").style.visibility="visible";
+			return false;
+		}
+		if(mobileVal(fnameVal.mobileNumber.value) != false)
+		{
+			document.getElementById("mobileID1").style.visibility="hidden";
+		}
+		if(emailVal(fnameVal.emailAddress1.value)==false)
+		{
+			document.getElementById("emailID1").style.visibility="visible";
+			return false;
+		}
+		if(emailVal(fnameVal.emailAddress1.value)!=false)
+		{
+			document.getElementById("emailID1").style.visibility="hidden";
+		}
+		if(emailVal(fnameVal.emailAddress2.value)==false)
+		{
+			document.getElementById("emailID2").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.emailAddress1.value != fnameVal.emailAddress2.value)
+		{
+			document.getElementById("emailID2").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.emailAddress1.value == fnameVal.emailAddress2.value)
+		{
+			document.getElementById("emailID2").style.visibility="hidden";
+		}
+		/*
+		if(mobileVal(fnameVal.mobileNum2.value) == false)
+		{
+			document.getElementById("mobileID2").style.visibility="visible";
+			return false;
+		}
+		if(mobileVal(fnameVal.mobileNum2.value) != false)
+		{
+			document.getElementById("mobileID2").style.visibility="hidden";
+		}*/
+		if(fnameVal.captcha.value == '')
+		{
+			document.getElementById("CaptchaID").style.visibility="visible";
+			return false;
+		}
+		if(fnameVal.captcha.value != '')
+		{
+			document.getElementById("CaptchaID").style.visibility="hidden";
+		}
+		else
+		{
+			return true;
+		}
+	}
+	
+function dateChangeValue(id)
+{
+	divID = document.getElementById(id);
+	divID.className="inputDateFocus hasDatepicker";
+	divID.value="";
+}
+
+
+/** To be Replaced by javascript from JSP 
+function changeTabs(tabID,divID)
+{
+	for(i=1; i<=5; i++)
+	{
+		try
+		{
+			document.getElementById("tab"+i).className="";
+		}
+		catch(e){}
+	}
+	for(i=1; i<=5; i++)
+	{
+		try
+		{
+			document.getElementById("TabDiv"+i).style.display="none";
+		}
+		catch(e){}
+	}
+	document.getElementById(tabID).className="active";
+	document.getElementById(divID).style.display="block";
+}
+*/
+
+function valScheduleTest()
+{
+	var testOpt = document.scheduleTest.test.options;
+	var test = document.scheduleTest.test.selectedIndex;
+	var centre1Opt = document.scheduleTest.centre1.options;
+	var centre1 = document.scheduleTest.centre1.selectedIndex;
+	var centre2Opt = document.scheduleTest.centre2.options;
+	var centre2 = document.scheduleTest.centre2.selectedIndex;
+	var centre3Opt = document.scheduleTest.centre3.options;
+	var centre3 = document.scheduleTest.centre3.selectedIndex;
+	if(testOpt[test].value == '')
+	{
+		document.getElementById("err1").style.visibility="visible";
+		return false;
+	}
+	if(testOpt[test].value != '')
+	{
+		document.getElementById("err1").style.visibility="hidden";
+	}
+	if(centre1Opt[centre1].value == '')
+	{
+		document.getElementById("err2").style.visibility="visible";
+		return false;
+	}
+	if(centre1Opt[centre1].value != '')
+	{
+		document.getElementById("err2").style.visibility="hidden";
+	}
+	if(centre2Opt[centre2].value == '')
+	{
+		document.getElementById("err3").style.visibility="visible";
+		return false;
+	}
+	if(centre2Opt[centre2].value != '')
+	{
+		document.getElementById("err3").style.visibility="hidden";
+	}
+	if(centre3Opt[centre3].value == '')
+	{
+		document.getElementById("err4").style.visibility="visible";
+		return false;
+	}
+	if(centre3Opt[centre3].value != '')
+	{
+		document.getElementById("err4").style.visibility="hidden";
+	}
+}
+function valPersonalInfo()
+{
+	var fname = document.personal;
+	var cityopt = fname.city.options;
+	var cityInd = fname.city.selectedIndex;
+	var stateopt = fname.state.options;
+	var stateInd = fname.state.selectedIndex;
+	
+	if(fname.address1.value=="")
+	{
+		document.getElementById("InfoErr1").style.visibility="visible";
+		return false;
+	}
+	if(fname.address1.value!="")
+	{
+		document.getElementById("InfoErr1").style.visibility="hidden";
+	}
+	if(cityopt[cityInd].value=="")
+	{
+		document.getElementById("InfoErr3").style.visibility="visible";
+		return false;
+	}
+	if(cityopt[cityInd].value!="")
+	{
+		document.getElementById("InfoErr3").style.visibility="hidden";
+	}
+	if(stateopt[stateInd].value=="")
+	{
+		document.getElementById("InfoErr4").style.visibility="visible";
+		return false;
+	}
+	if(stateopt[stateInd].value!="")
+	{
+		document.getElementById("InfoErr4").style.visibility="hidden";
+	}
+	if(pincodeVal(fname.pincode.value) == false)
+	{
+		document.getElementById("InfoErr5").style.visibility="visible";
+		return false;
+	}
+	if(pincodeVal(fname.pincode.value) != false)
+	{
+		document.getElementById("InfoErr5").style.visibility="hidden";
+	}
+	if(emailVal(fname.emailID.value)==false)
+	{
+		document.getElementById("InfoErr6").style.visibility="visible";
+		return false;
+	}
+	if(emailVal(fname.emailID.value)!=false)
+	{
+		document.getElementById("InfoErr6").style.visibility="hidden";
+	}
+	if(mobileVal(fname.mobile.value) == false)
+	{
+		document.getElementById("InfoErr7").style.visibility="visible";
+		return false;
+	}
+	if(mobileVal(fname.mobile.value) != false)
+	{
+		document.getElementById("InfoErr7").style.visibility="hidden";
+	}
+}
+function resetPersonalInfo()
+{
+	var fname = document.personal;
+	fname.address1.value="";
+	fname.address2.value="";
+	fname.city.selectedIndex=0;
+	fname.state.selectedIndex=0;
+	fname.pincode.value="";
+	fname.emailID.value="";
+	fname.mobile.value="";
+	for(i=1; i<=7; i++)
+	{
+		document.getElementById("InfoErr"+i).style.visibility="hidden";
+	}
+}
+
+function valAcademic()
+{
+	var fname = document.academic;
+	var examopt = fname.exam.options;
+	var examInd = fname.exam.selectedIndex;
+	var yearopt = fname.year.options;
+	var yearInd = fname.year.selectedIndex;
+	var boardopt = fname.board.options;
+	var boardInd = fname.board.selectedIndex;
+	if(examopt[examInd].value=="")
+	{
+		document.getElementById("qaerrorID1").style.visibility="visible";
+		return false;
+	}
+	if(examopt[examInd].value!="")
+	{
+		document.getElementById("qaerrorID1").style.visibility="hidden";
+	}
+	if(yearopt[yearInd].value=="")
+	{
+		document.getElementById("qaerrorID2").style.visibility="visible";
+		return false;
+	}
+	if(yearopt[yearInd].value!="")
+	{
+		document.getElementById("qaerrorID2").style.visibility="hidden";
+	}
+	if(fname.percentage.value=="")
+	{
+		document.getElementById("qaerrorID3").style.visibility="visible";
+		return false;
+	}
+	if(fname.percentage.value!="")
+	{
+		document.getElementById("qaerrorID3").style.visibility="hidden";
+	}
+	if(fname.rollno.value=="")
+	{
+		document.getElementById("qaerrorID4").style.visibility="visible";
+		return false;
+	}
+	if(fname.rollno.value!="")
+	{
+		document.getElementById("qaerrorID4").style.visibility="hidden";
+	}
+	if(boardopt[boardInd].value=="")
+	{
+		document.getElementById("qaerrorID5").style.visibility="visible";
+		return false;
+	}
+	if(boardopt[boardInd].value!="")
+	{
+		document.getElementById("qaerrorID5").style.visibility="hidden";
+	}
+}
+function valDDPayment()
+{
+	var fname = document.DDPayment;
+	var bankopt = fname.bank.options;
+	var bankInd = fname.bank.selectedIndex;
+	if(fname.DDnumber.value=="")
+	{
+		document.getElementById("payerr1").style.visibility="visible";
+		return false;
+	}
+	if(fname.DDnumber.value!="")
+	{
+		document.getElementById("payerr1").style.visibility="hidden";
+	}
+	if(dateVal(document.DDPayment.date) == false)
+	{
+		document.getElementById("payerr2").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(document.DDPayment.date) != false)
+	{
+		document.getElementById("payerr2").style.visibility="hidden";
+	}
+	if(bankopt[bankInd].value=="")
+	{
+		document.getElementById("payerr3").style.visibility="visible";
+		return false;
+	}
+	if(bankopt[bankInd].value!="")
+	{
+		document.getElementById("payerr3").style.visibility="hidden";
+	}
+	
+}
+
+
+function valchallanPayment()
+{
+	var fname = document.challan;
+	var branchopt = fname.branchName.options;
+	var branchInd = fname.branchName.selectedIndex;
+	var codeopt = fname.branchCode.options;
+	var codeInd = fname.branchCode.selectedIndex;
+	if(fname.scroll.value=="")
+	{
+		document.getElementById("errchallan1").style.visibility="visible";
+		return false;
+	}
+	if(fname.scroll.value!="")
+	{
+		document.getElementById("errchallan1").style.visibility="hidden";
+	}
+	if(dateVal(document.challan.date) == false)
+	{
+		document.getElementById("errchallan2").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(document.challan.date) != false)
+	{
+		document.getElementById("errchallan2").style.visibility="hidden";
+	}
+	if(branchopt[branchInd].value=="")
+	{
+		document.getElementById("errchallan3").style.visibility="visible";
+		return false;
+	}
+	if(branchopt[branchInd].value!="")
+	{
+		document.getElementById("errchallan3").style.visibility="hidden";
+	}
+	if(codeopt[codeInd].value=="")
+	{
+		document.getElementById("errchallan4").style.visibility="visible";
+		return false;
+	}
+	if(codeopt[codeInd].value!="")
+	{
+		document.getElementById("errchallan4").style.visibility="hidden";
+	}
+}
+function valExamDate()
+{
+	var fname = document.examDate;
+	var stateopt = fname.state.options;
+	var stateInd = fname.state.selectedIndex;
+	var cityopt = fname.city.options;
+	var cityInd = fname.city.selectedIndex;
+	var dateopt = fname.date.options;
+	var dateInd = fname.date.selectedIndex;
+	var timeopt = fname.time.options;
+	var timeInd = fname.time.selectedIndex;
+	if(stateopt[stateInd].value=="")
+	{
+		document.getElementById("errorID1").style.visibility="visible";
+		return false;
+	}
+	if(stateopt[stateInd].value!="")
+	{
+		document.getElementById("errorID1").style.visibility="hidden";
+	}
+	if(cityopt[cityInd].value=="")
+	{
+		document.getElementById("errorID2").style.visibility="visible";
+		return false;
+	}
+	if(cityopt[cityInd].value!="")
+	{
+		document.getElementById("errorID2").style.visibility="hidden";
+	}
+	if(dateopt[dateInd].value=="")
+	{
+		document.getElementById("errorID3").style.visibility="visible";
+		return false;
+	}
+	if(dateopt[dateInd].value!="")
+	{
+		document.getElementById("errorID3").style.visibility="hidden";
+	}
+	if(timeopt[timeInd].value=="")
+	{
+		document.getElementById("errorID4").style.visibility="visible";
+		return false;
+	}
+	if(timeopt[timeInd].value!="")
+	{
+		document.getElementById("errorID4").style.visibility="hidden";
+	}
+}
+
+function enableRequestFeild(chk,id)
+{
+	Newid = document.getElementById(id);
+	Newchk = document.getElementById(chk);
+	if(Newchk.checked==true)
+	{
+		Newid.style.display="block";
+	}
+	else
+	{
+		Newid.style.display="none";
+	}
+}
+function resetPaySearch()
+{
+	document.Payment.reset();
+}
+function resetAdmitSearch()
+{
+	document.GenerateAdmit.reset();
+}
+function resetEnrollmentDetailsSearch()
+{
+	document.Enrollment.reset();
+}
+function resetEligibleSearch()
+{
+	document.Eligible.reset();
+}
+function resetCertificateSearch()
+{
+	document.Certificate.reset();
+}
+
+
+function SearchAction()
+{
+	var payVal = document.getElementById("SearchActivity").options;
+	var payIndex = document.getElementById("SearchActivity").selectedIndex;
+	for(i=1; i<=5; i++)
+	{
+		try
+		{
+			document.getElementById("SearchField"+i).style.display="none";
+		}
+		catch(e)
+		{
+		}
+	}
+	
+	if(payVal[payIndex].value=="Payment Approval")
+	{
+		document.getElementById("SearchField1").style.display="block";
+	}
+	else if(payVal[payIndex].value=="Generate Admit Card")
+	{
+		document.getElementById("SearchField2").style.display="block";
+	}
+	else if(payVal[payIndex].value=="Enrollment Details")
+	{
+		document.getElementById("SearchField3").style.display="block";
+	}
+	else if(payVal[payIndex].value=="Eligible/Non-Eligible Candidate")
+	{
+		document.getElementById("SearchField4").style.display="block";
+	}
+	else if(payVal[payIndex].value=="Generate Certificate")
+	{
+		document.getElementById("SearchField5").style.display="block";
+	}
+	else
+	{
+		document.getElementById("SearchField1").style.display="block";
+	}
+}
+function CommonSearch(divID)
+{
+	var IDdiv = document.getElementById(divID);
+	for(i=1; i<=7; i++)
+	{
+		try
+		{
+			document.getElementById("gridDiv"+i).style.display="none";
+		}
+		catch(e)
+		{}
+	}
+	try{
+	IDdiv.style.display="block";
+	}
+	catch(s){}
+}
+
+function publishResult()
+{
+	var fname = document.publish;
+	var testopt = fname.test.options;
+	var testInd = fname.test.selectedIndex;
+	if(testopt[testInd].value=="")
+	{
+		document.getElementById("errorID1").style.visibility="visible";
+		return false;
+	}
+	if(testopt[testInd].value!="")
+	{
+		document.getElementById("errorID1").style.visibility="hidden";
+	}
+	if(fname.instructions.value=="")
+	{
+		document.getElementById("errorID2").style.visibility="visible";
+		return false;
+	}
+	if(fname.instructions.value != "")
+	{
+		document.getElementById("errorID2").style.visibility="hidden";
+	}
+}
+function updateRecord()
+{
+	var fname = document.RecordUpdate;
+	var durationopt = fname.duration.options;
+	var durationInd = fname.duration.selectedIndex;
+	var slotopt = fname.slot.options;
+	var slotInd = fname.slot.selectedIndex;
+	var feeopt = fname.fee.options;
+	var feeInd = fname.fee.selectedIndex;
+	
+	if(durationopt[durationInd].value=="")
+	{
+		document.getElementById("upRecord1").style.visibility="visible";
+		return false;
+	}
+	if(durationopt[durationInd].value!="")
+	{
+		document.getElementById("upRecord1").style.visibility="hidden";
+	}
+	if(fname.startDate.value == "")
+	{
+		document.getElementById("upRecord2").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.startDate) == false)
+	{
+		document.getElementById("upRecord2").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.startDate) != false)
+	{
+		document.getElementById("upRecord2").style.visibility="hidden";
+	}
+	if(fname.endDate.value == "")
+	{
+		document.getElementById("upRecord3").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.endDate) == false)
+	{
+		document.getElementById("upRecord3").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.endDate) != false)
+	{
+		document.getElementById("upRecord3").style.visibility="hidden";
+	}
+	if(slotopt[slotInd].value=="")
+	{
+		document.getElementById("upRecord4").style.visibility="visible";
+		return false;
+	}
+	if(slotopt[slotInd].value!="")
+	{
+		document.getElementById("upRecord4").style.visibility="hidden";
+	}
+	if(feeopt[feeInd].value=="")
+	{
+		document.getElementById("upRecord5").style.visibility="visible";
+		return false;
+	}
+	if(feeopt[feeInd].value!="")
+	{
+		document.getElementById("upRecord5").style.visibility="hidden";
+	}
+	if(fname.startTime.value=="")
+	{
+		document.getElementById("upRecord6").style.visibility="visible";
+		return false;
+	}
+	if(fname.startTime.value!="")
+	{
+		document.getElementById("upRecord6").style.visibility="hidden";
+	}
+	if(fname.endTime.value=="")
+	{
+		document.getElementById("upRecord7").style.visibility="visible";
+		return false;
+	}
+	if(fname.endTime.value!="")
+	{
+		document.getElementById("upRecord7").style.visibility="hidden";
+	}
+}
+
+
+function AddRecord()
+{
+	var fname = document.RecordAdd;
+	var durationopt = fname.duration.options;
+	var durationInd = fname.duration.selectedIndex;
+	var slotopt = fname.slot.options;
+	var slotInd = fname.slot.selectedIndex;
+	var feeopt = fname.fee.options;
+	var feeInd = fname.fee.selectedIndex;
+	if(fname.test.value=="")
+	{
+		document.getElementById("Adderr8").style.visibility="visible";
+		return false;
+	}
+	if(fname.test.value!="")
+	{
+		document.getElementById("Adderr8").style.visibility="hidden";
+	}
+	if(durationopt[durationInd].value=="")
+	{
+		document.getElementById("Adderr1").style.visibility="visible";
+		return false;
+	}
+	if(durationopt[durationInd].value!="")
+	{
+		document.getElementById("Adderr1").style.visibility="hidden";
+	}
+	if(fname.startDate.value == "")
+	{
+		document.getElementById("Adderr2").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.startDate) == false)
+	{
+		document.getElementById("Adderr2").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.startDate) != false)
+	{
+		document.getElementById("Adderr2").style.visibility="hidden";
+	}
+	if(fname.endDate.value == "")
+	{
+		document.getElementById("Adderr3").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.endDate) == false)
+	{
+		document.getElementById("Adderr3").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.endDate) != false)
+	{
+		document.getElementById("Adderr3").style.visibility="hidden";
+	}
+	if(slotopt[slotInd].value=="")
+	{
+		document.getElementById("Adderr4").style.visibility="visible";
+		return false;
+	}
+	if(slotopt[slotInd].value!="")
+	{
+		document.getElementById("Adderr4").style.visibility="hidden";
+	}
+	if(feeopt[feeInd].value=="")
+	{
+		document.getElementById("Adderr5").style.visibility="visible";
+		return false;
+	}
+	if(feeopt[feeInd].value!="")
+	{
+		document.getElementById("Adderr5").style.visibility="hidden";
+	}
+	if(fname.startTime.value=="")
+	{
+		document.getElementById("Adderr6").style.visibility="visible";
+		return false;
+	}
+	if(fname.startTime.value!="")
+	{
+		document.getElementById("Adderr6").style.visibility="hidden";
+	}
+	if(fname.endTime.value=="")
+	{
+		document.getElementById("Adderr7").style.visibility="visible";
+		return false;
+	}
+	if(fname.endTime.value!="")
+	{
+		document.getElementById("Adderr7").style.visibility="hidden";
+	}
+}
+
+
+
+function manualUpload()
+{
+	var fname = document.manual;
+	var testopt = fname.test.options;
+	var testInd = fname.test.selectedIndex;
+	var activityopt = fname.activity.options;
+	var activityInd = fname.activity.selectedIndex;
+	if(testopt[testInd].value=="")
+	{
+		document.getElementById("err1").style.visibility="visible";
+		return false;
+	}
+	if(testopt[testInd].value!="")
+	{
+		document.getElementById("err1").style.visibility="hidden";
+	}
+	if(activityopt[activityInd].value=="")
+	{
+		document.getElementById("err2").style.visibility="visible";
+		return false;
+	}
+	if(activityopt[activityInd].value!="")
+	{
+		document.getElementById("err2").style.visibility="hidden";
+	}
+	if(fname.file.value=="")
+	{
+		document.getElementById("err3").style.visibility="visible";
+		return false;
+	}
+	if(fname.file.value!="")
+	{
+		document.getElementById("err3").style.visibility="hidden";
+	}
+}
+
+
+function valDateDefinition()
+{
+	var fname = document.definition;
+	
+	var testopt = fname.test.options;
+	var testInd = fname.test.selectedIndex;
+	var activityopt = fname.activity.options;
+	var activityInd = fname.activity.selectedIndex;
+	if(testopt[testInd].value=="")
+	{
+		document.getElementById("defineError1").style.visibility="visible";
+		return false;
+	}
+	if(testopt[testInd].value!="")
+	{
+		document.getElementById("defineError1").style.visibility="hidden";
+	}
+	if(activityopt[activityInd].value=="")
+	{
+		document.getElementById("defineError2").style.visibility="visible";
+		return false;
+	}
+	if(activityopt[activityInd].value!="")
+	{
+		document.getElementById("defineError2").style.visibility="hidden";
+	}
+	if(fname.startDate.value=="")
+	{
+		document.getElementById("defineError3").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.startDate) == false)
+	{
+		document.getElementById("defineError3").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.startDate) != false)
+	{
+		document.getElementById("defineError3").style.visibility="hidden";
+	}
+	
+	if(fname.endDate.value=="")
+	{
+		document.getElementById("defineError4").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.endDate) == false)
+	{
+		document.getElementById("defineError4").style.visibility="visible";
+		return false;
+	}
+	if(dateVal(fname.endDate) != false)
+	{
+		document.getElementById("defineError4").style.visibility="hidden";
+	}
+}
+
+
+function valEligible()
+{
+	var fname = document.Eligible;
+	
+	var categoryopt = fname.category.options;
+	var categoryInd = fname.category.selectedIndex;
+	var genderopt = fname.gender.options;
+	var genderInd = fname.gender.selectedIndex;
+	if(categoryopt[categoryInd].value=="")
+	{
+		document.getElementById("EligibleError1").style.visibility="visible";
+		return false;
+	}
+	if(categoryopt[categoryInd].value!="")
+	{
+		document.getElementById("EligibleError1").style.visibility="hidden";
+	}
+	if(genderopt[genderInd].value=="")
+	{
+		document.getElementById("EligibleError2").style.visibility="visible";
+		return false;
+	}
+	if(genderopt[genderInd].value!="")
+	{
+		document.getElementById("EligibleError2").style.visibility="hidden";
+	}
+	if(fname.marks.value=="")
+	{
+		document.getElementById("EligibleError3").style.visibility="visible";
+		return false;
+	}
+	if(fname.marks.value!="")
+	{
+		document.getElementById("EligibleError3").style.visibility="hidden";
+	}
+	if(fname.age.value=="")
+	{
+		document.getElementById("EligibleError4").style.visibility="visible";
+		return false;
+	}
+	if(fname.age.value!="")
+	{
+		document.getElementById("EligibleError4").style.visibility="hidden";
+	}
+}
+
+function valAddEligible()
+{
+	var fname = document.EligibleAdd;
+	
+	var categoryopt = fname.category.options;
+	var categoryInd = fname.category.selectedIndex;
+	var genderopt = fname.gender.options;
+	var genderInd = fname.gender.selectedIndex;
+	if(fname.test.value=="")
+	{
+		document.getElementById("EligibleAdd1").style.visibility="visible";
+		return false;
+	}
+	if(fname.test.value!="")
+	{
+		document.getElementById("EligibleAdd1").style.visibility="hidden";
+	}
+	if(categoryopt[categoryInd].value=="")
+	{
+		document.getElementById("EligibleAdd2").style.visibility="visible";
+		return false;
+	}
+	if(categoryopt[categoryInd].value!="")
+	{
+		document.getElementById("EligibleAdd2").style.visibility="hidden";
+	}
+	if(genderopt[genderInd].value=="")
+	{
+		document.getElementById("EligibleAdd3").style.visibility="visible";
+		return false;
+	}
+	if(genderopt[genderInd].value!="")
+	{
+		document.getElementById("EligibleAdd3").style.visibility="hidden";
+	}
+	if(fname.marks.value=="")
+	{
+		document.getElementById("EligibleAdd4").style.visibility="visible";
+		return false;
+	}
+	if(fname.marks.value!="")
+	{
+		document.getElementById("EligibleAdd4").style.visibility="hidden";
+	}
+	if(fname.age.value=="")
+	{
+		document.getElementById("EligibleAdd5").style.visibility="visible";
+		return false;
+	}
+	if(fname.age.value!="")
+	{
+		document.getElementById("EligibleAdd5").style.visibility="hidden";
+	}
+}
+
+
+function valFAQ()
+{
+	var fname = document.FAQ;
+	var testopt = fname.test.options;
+	var testInd = fname.test.selectedIndex;
+	if(testopt[testInd].value=="")
+	{
+		document.getElementById("faqerr1").style.visibility="visible";
+		return false;
+	}
+	if(testopt[testInd].value!="")
+	{
+		document.getElementById("faqerr1").style.visibility="hidden";
+	}
+	if(fname.filePath.value=="")
+	{
+		document.getElementById("faqerr2").style.visibility="visible";
+		return false;
+	}
+	if(fname.filePath.value!="")
+	{
+		document.getElementById("faqerr2").style.visibility="hidden";
+	}
+
+}
+
+function ValFeedback()
+{
+	var fname = document.feedback;
+	if(fname.comments.value=="")
+	{
+		document.getElementById("feedbackError").style.visibility="visible";
+	}
+	else
+	{
+		document.getElementById("feedbackError").style.visibility="hidden";
+	}
+}
+function chkTrue(cont)
+{
+	fname = document.EligibilityCriteria;
+	if(fname.emailChk.checked == true && cont == "email")
+	{
+		fname.subject.disabled=false;
+		fname.email.disabled=false;
+	}
+	else if(fname.emailChk.checked == false && cont == "email")
+	{
+		fname.subject.disabled=true;
+		fname.email.disabled=true;
+	}
+	if(fname.smsChk.checked == true && cont == "sms")
+	{
+		fname.sms.disabled=false;
+	}
+	else if(fname.smsChk.checked == false && cont == "sms")
+	{
+		fname.sms.disabled=true;
+	}
+}
+
+
+function AddEmail()
+{
+	fname = document.EligibilityCriteria;
+	keyopt = fname.kyewords.options;
+	keyInd = fname.kyewords.selectedIndex;
+	if(fname.email.disabled == false)
+	{
+		if(keyInd < 0)
+		{
+			document.getElementById("Error4").innerHTML="Please select input lable."
+		}
+		else if(keyopt[keyInd].value != "")
+		{
+			document.getElementById("Error4").innerHTML=""
+			fname.email.value += keyopt[keyInd].value;
+		}
+	}
+	else if(fname.email.disabled == true)
+	{
+		document.getElementById("Error4").innerHTML="Please select Email Content checkbox";
+	}
+}
+
+function addOPT()
+{
+	document.EligibilityCriteria.kyewords.options[0]=new Option("{EXAM}", "{EXAM}");
+	document.EligibilityCriteria.kyewords.options[1]=new Option("{EXAM FEES}", "{EXAM FEES}");
+	document.EligibilityCriteria.kyewords.options[2]=new Option("{TXN NO}", "{TXN NO}");
+	document.EligibilityCriteria.kyewords.options[3]=new Option("{TXN DATE}", "{TXN DATE}");
+	document.EligibilityCriteria.kyewords.options[4]=new Option("{CANDIDATE NAME}", "{CANDIDATE NAME}");
+}
+
+function AddSMS()
+{
+	fname = document.EligibilityCriteria;
+	keyopt = fname.kyewords.options;
+	keyInd = fname.kyewords.selectedIndex;
+	if(fname.sms.disabled == false)
+	{
+		if(keyInd < 0)
+		{
+			document.getElementById("Error5").innerHTML="Please select input lable."
+		}
+		else if(keyopt[keyInd].value != "")
+		{
+			document.getElementById("Error5").innerHTML=""
+			fname.sms.value += keyopt[keyInd].value;
+		}
+	}
+	else if(fname.sms.disabled == true)
+	{
+		document.getElementById("Error5").innerHTML="Please select SMS Content checkbox";
+	}
+}
+function emailSMSVal()
+{
+	fname = document.EligibilityCriteria;
+	examopt = fname.exam.options;
+	examInd = fname.exam.selectedIndex;
+	activityopt = fname.activity.options;
+	activityInd = fname.activity.selectedIndex;
+	if(examopt[examInd].value=="")
+	{
+		document.getElementById("Error1").innerHTML="Please select examination.";
+		return false;
+	}
+	if(examopt[examInd].value!="")
+	{
+		document.getElementById("Error1").innerHTML="";
+	}
+	if(activityopt[activityInd].value=="")
+	{
+		document.getElementById("Error2").innerHTML="Please select activity.";
+		return false;
+	}
+	if(activityopt[activityInd].value!="")
+	{
+		document.getElementById("Error2").innerHTML="";
+	}
+	if(fname.emailChk.checked == true)
+	{
+		if(fname.subject.value == "")
+		{
+			document.getElementById("Error4").innerHTML="Please type subject.";
+			return false;
+		}
+		if(fname.subject.value != "")
+		{
+			document.getElementById("Error4").innerHTML="";
+		}
+		if(fname.email.value == "")
+		{
+			document.getElementById("Error4").innerHTML="Please type content in textbox.";
+			return false;
+		}
+		if(fname.email.value != "")
+		{
+			document.getElementById("Error4").innerHTML="";
+		}
+	}
+	if(fname.smsChk.checked == true)
+	{
+		if(fname.sms.value == "")
+		{
+			document.getElementById("Error5").innerHTML="Please type text in textbox.";
+			return false;
+		}
+		if(fname.sms.value != "")
+		{
+			document.getElementById("Error5").innerHTML="";
+		}
+	}
+}
+
+function paymentOPT(payOPT)
+{
+	//alert( "payOPT"  + payOPT);
+	for(i=1; i<=3; i++)
+	{
+		try
+		{
+			document.getElementById("pay"+i).style.display="none";
+		}
+		catch(e){}
+	}
+	document.getElementById(payOPT).style.display="block";
+}
+
+function toggle() {
+	
+	var ele = document.getElementById("toggleText");
+	var text = document.getElementById("displayText");
+	if(ele.style.display == "block") {
+		   	ele.style.display = "block";
+		}
+	else {
+			ele.style.display = "block";
+		}
+} 
+
+function createErrorList(message, ulID, divID) 
+{ 
+	var msgArr = message.split('##');
+	$("#"+ulID).children().remove();
+	$.each(msgArr, function(val) {
+		if(msgArr[val] != ""){
+			var listTag = document.createElement("li"); 
+			listTag.id = "list1"; 
+			listTag.className ="dynamicSpan"; 
+			listTag.innerHTML = msgArr[val];
+			document.getElementById(""+ulID).appendChild(listTag);
+		}
+	 });
+	$("#"+divID).show(); 
+} 
+
+function numbersonly(e){
+	var unicode=e.charCode? e.charCode : e.keyCode
+	if (unicode==9){
+		return true;
+	}
+		
+	if ((unicode < 48 || unicode > 57) && unicode!=8 && unicode != 52 ){ //if not a number
+		return false; //disable key press
+	}
+		
+	
+}
+
+function validatePassword(pwd)
+{
+	//var pwd = $("#newPassword").val();
+	//var message = "";
+//	var length = pwd.length;
+//	rgEx1 = /[0-9]/;
+//	rgEx2 = /[a-z]/;
+//	rgEx3 = /[A-Z]/;
+//	rgEx4 = /[`~!@#$%^&*()+=\|,<>?'";:{}]/;
+//	rgEx = /^.*(?=.{6,20})(?=.*[A-Za-z])(?=.*[\d])(?=.*[!*~`.,?;:\|<>_@#$%^&+=]).*$-/
+	
+	//chech for alpha numeral & special characters
+///	if(!rgEx.test(pwd))
+//	{
+//		message = 'Password must be atleast 6 characters, alphanumeric and special character. ##  Valid special characters are    ! * ~ ` . , ? ; : \ |  < >  _ @ # $ % ^ & + =';
+		
+////		return message;
+//	}
+	//else
+		return true;
+}
+function nameValidator(e) {
+	var unicode=e.charCode? e.charCode : e.keyCode
+	if (unicode!=8){
+		//alert(unicode);
+		if ((unicode > 96 && unicode < 123) || (unicode > 64 && unicode < 91) ||  unicode == 9 || unicode == 190 || unicode == 192 || unicode == 32 || unicode == 39) //removing unicode == 46
+            return true;
+        else
+            return false;
+	}
+}
+function birthPlaceValidator(e) {
+	var unicode=e.charCode? e.charCode : e.keyCode
+	if (unicode!=8){
+		//alert(unicode);
+		if ((unicode > 96 && unicode < 123) || (unicode > 64 && unicode < 91) ||  unicode == 46 || unicode == 9 || unicode == 190 || unicode == 192 || unicode == 32 ) 
+            return true;
+        else
+            return false;
+	}
+}
+function motherTongueValidator(e) {
+	var unicode=e.charCode? e.charCode : e.keyCode
+	if (unicode!=8){
+		//alert(unicode);
+		if ((unicode > 96 && unicode < 123) || (unicode > 64 && unicode < 91) ||  unicode == 9 || unicode == 190 || unicode == 222) 
+            return true;
+        else
+            return false;
+	}
+}
+function isdCodeValidator(e) {
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if (unicode!=8){
+		//alert(unicode);
+		if ((unicode > 46 && unicode < 58) ||  unicode == 46 || unicode == 9 || unicode == 107 ) 
+            return true;
+        else
+            return false;
+	}
+}
+function alphaNumericOnly(e){
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if((unicode < 97 || unicode > 122 ) && (unicode < 65 || unicode > 90) && (unicode < 48 || unicode>57) && unicode != 8 && unicode != 9  && unicode!= 39){
+		
+		return false;
+	}else if(unicode== 39){
+		return false;
+	}
+}
+function alphaNumericWithSpace(e){
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if((unicode < 97 || unicode > 122 ) && (unicode < 65 || unicode > 90) && (unicode < 48 || unicode>57) && unicode != 8 && unicode != 9  && unicode!= 39 && unicode != 32){
+		
+		return false;
+	}else if(unicode== 39){
+		return false;
+	}
+}
+function numbersonly(e){
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if (unicode!=8 ){
+	if ((unicode<48||unicode>57)) //if not a number
+		return false //disable key press
+	}
+}
+
+function alphaNumeric(e)
+{
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if((unicode < 97 || unicode > 122 ) && (unicode < 65 || unicode > 90) && (unicode<48 || unicode>57) && unicode != 8 && unicode != 9 && unicode != 46  && unicode != 39)
+		return false;
+}
+function alphabets(e)
+{
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if((unicode < 97 || unicode > 122 ) && (unicode < 65 || unicode > 90) && unicode != 8 && unicode != 9 && unicode != 46  && unicode != 39)
+		return false;
+}
+function alphabetsWithSpace(e)
+{
+	var unicode=e.charCode? e.charCode : e.keyCode;
+	if((unicode < 97 || unicode > 122 ) && (unicode < 65 || unicode > 90) && unicode != 32 && unicode != 8 && unicode != 9 && unicode != 46  && unicode != 39)
+		return false;
+}
+function getMonthNoByMonthName(monthName)
+{
+	
+	var returnValue;
+	if(monthName.toUpperCase() == 'JAN' )
+	{
+		returnValue= 0;
+	}
+	else if(monthName.toUpperCase() == 'FEB')
+	{
+		returnValue= 1;
+	}else if(monthName.toUpperCase() == 'MAR')
+	{
+		returnValue= 2;
+	}else if(monthName.toUpperCase() == 'APR')
+	{
+		returnValue= 3;
+	}else if(monthName.toUpperCase() == 'MAY')
+	{
+		returnValue= 4;
+	}else if(monthName.toUpperCase() == 'JUN')
+	{
+		returnValue= 5;
+	}else if(monthName.toUpperCase() == 'JUL')
+	{
+		returnValue= 6;
+	}else if(monthName.toUpperCase() == 'AUG')
+	{
+		returnValue= 7;
+	}else if(monthName.toUpperCase() == 'SEP')
+	{
+		returnValue= 8;
+	}else if(monthName.toUpperCase() == 'OCT')
+	{
+		returnValue= 9;
+	}else if(monthName.toUpperCase() == 'NOV')
+	{
+		returnValue= 10;
+	}else if(monthName.toUpperCase() == 'DEC')
+	{
+		returnValue= 11;
+	}
+	
+	return returnValue;
+}
+function isValidPercentage(perc)
+{
+	
+	var returnVal= true;
+	var x = parseFloat(perc);
+	var ele  = perc.split(".");
+	
+	if (isNaN(x) || x < 0 || x > 100 || ele.length>2) {
+	
+		returnVal = false;
+	}
+	return returnVal;
+}
+
+
+	function educationValidator(e) {
+		var unicode=e.charCode? e.charCode : e.keyCode
+		
+		if ((unicode > 64 && unicode < 91)||(unicode > 96 && unicode < 123) || (unicode > 47 && unicode < 58) ||  unicode == 45 || unicode == 46 || unicode == 38 || unicode==8 || unicode==32){
+			return true;
+		}
+        else{
+        	return false;
+        }
+}
+
+	
+	function codeValidator(e) {
+		var unicode=e.charCode? e.charCode : e.keyCode
+
+		if ((unicode > 64 && unicode < 91)||(unicode > 96 && unicode < 123) || (unicode > 47 && unicode < 58) || unicode==8){
+			return true;
+		}
+        else{
+        	return false;
+        }
+}
+	
+	
+	function charSpclValidator(e) {
+		var unicode=e.charCode? e.charCode : e.keyCode
+				if ((unicode > 47 && unicode < 58)){
+					return false;
+				}
+		        else{
+		        	return true;
+		        }
+}
+	
+	function showModal(popID)
+	{
+		//alert("satish");
+		PopHideAll();
+		boxID = document.getElementById(popID);
+		//alert($("pad12"));
+		//$("pad12").modal({backdrop: 'static', keyboard: false});
+		jQuery('#pad12').focus();
+		FadeboxID = document.getElementById("pop2");
+		FadeboxID.style.display = "block";
+		boxID.style.display = "block";
+		//alert( $(".fullscreen-container"));
+		$(".fullscreen-container").fadeTo(200, 1);
+		$("pad12").focus();
+	}

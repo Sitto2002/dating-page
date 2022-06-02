@@ -1,0 +1,363 @@
+/*function msgwindow(){
+var oPopup = window.createPopup();
+var oPopupBody = oPopup.document.body;
+oPopupBody.innerHTML = "<center>SORRY!</center><br>An entry with the same centre code already exists"+
+"<br>The new centre cannot be inserted";
+oPopup.show(100,100,200,50, document.body);
+}*/
+function checkDate(daystr,monthcode,yearstr){
+	var monthstr;
+	var datestr = daystr+' '+monthcode+' '+yearstr;
+	//create a new date object
+	var myDate = new Date(datestr);
+	//convert the date to a string so we can parse it
+	var myDateStr = myDate.toString();
+	//split the string at every space
+	var myDate_Array = myDateStr.split(' ');
+	if(myDate_Array[1] != monthcode){
+		return 0;
+	}
+	else{
+		return 1;
+	}
+}
+
+function checkDate1(daystr,monthcode,yearstr){
+  var monthstr;
+  if(monthcode == '01') monthstr = 'Jan';
+  else if(monthcode == '02') monthstr = 'Feb';
+  else if(monthcode == '03') monthstr = 'Mar';
+  else if(monthcode == '04') monthstr = 'Apr';
+  else if(monthcode == '05') monthstr = 'May';
+  else if(monthcode == '06') monthstr = 'Jun';
+  else if(monthcode == '07') monthstr = 'Jul';
+  else if(monthcode == '08') monthstr = 'Aug';
+  else if(monthcode == '09') monthstr = 'Sep';
+  else if(monthcode == '10') monthstr = 'Oct';
+  else if(monthcode == '11') monthstr = 'Nov';
+  else if(monthcode == '12') monthstr = 'Dec';
+  var datestr = daystr+' '+monthstr+' '+yearstr;
+  //create a new date object
+  var myDate = new Date(datestr);
+  //convert the date to a string so we can parse it
+  var myDateStr = myDate.toString();
+  //split the string at every space
+  var myDate_Array = myDateStr.split(' ');
+  if(myDate_Array[1] != monthstr){
+    return 0;
+  }
+  else{
+    return 1;
+  }
+}
+
+function formDate(d,m,y){
+  var mcount;
+  if(m == "Jan"){mcount = 1;}
+  else if(m == "Feb"){mcount = 2;}
+  else if(m == "Mar"){mcount = 3;}
+  else if(m == "Apr"){mcount = 4;}
+  else if(m == "May"){mcount = 5;}
+  else if(m == "Jun"){mcount = 6;}
+  else if(m == "Jul"){mcount = 7;}
+  else if(m == "Aug"){mcount = 8;}
+  else if(m == "Sep"){mcount = 9;}
+  else if(m == "Oct"){mcount = 10;}
+  else if(m == "Nov"){mcount = 11;}
+  else if(m == "Dec"){mcount = 12;}
+  if(mcount < 10){return y+"-0"+mcount+"-"+d;}
+  else{return y+"-"+mcount+"-"+d;}
+}
+function checkDOB(o,d,c){
+ var oyr = parseFloat(o.substr(0,4));
+ var dyr = parseFloat(d.substr(0,4));
+ var cyr = parseFloat(c.substr(0,4));
+ var omth = parseFloat(o.substr(5,2));
+ var dmth = parseFloat(d.substr(5,2));
+ var cmth = parseFloat(c.substr(5,2));
+ var oday = parseFloat(o.substr(8,2));
+ var dday = parseFloat(d.substr(8,2));
+ var cday = parseFloat(c.substr(8,2));
+ if(dyr < oyr || dyr > cyr){return 0;}
+ else if(dyr == oyr && dmth < omth){return 0;}
+ else if(dyr == oyr && dmth == omth && dday < oday ){return 0;}
+ else if(dyr == cyr && dmth > cmth){return 0;}
+ else if(dyr == cyr && dmth == cmth && dday > cday){return 0;}
+ else{return 1;}
+}
+//function to compare two dates
+function dateCompare(date1,date2){
+  var yr1 = parseFloat(date1.substr(0,4));
+  var mnth1 = parseFloat(date1.substr(5,2));
+  var day1 = parseFloat(date1.substr(8,2));
+  var yr2 = parseFloat(date2.substr(0,4));
+  var mnth2 = parseFloat(date2.substr(5,2));
+  var day2 = parseFloat(date2.substr(8,2));
+  if((yr1 > yr2) || (yr1 == yr2 && mnth1 > mnth2) || (yr1 == yr2 && mnth1 == mnth2 && day1 > day2)){
+    return 0;
+  }
+  else if(yr1 == yr2 && mnth1 == mnth2 && day1 == day2){
+    return 0;
+  }
+  else{
+    return 1;
+  }
+}
+//function to reverse the string
+function revStr(str){
+  var reversed = '';
+  for(i=str.length; i>=0; i--){
+    reversed += str.charAt(i); 
+  }
+  return reversed;
+}
+//function to reverse the date string
+function revDate(str){
+  daterev = str.substr(str.length-4,4)+'-'+str.substr(3,2)+'-'+str.substr(0,2);
+  return daterev;
+} 
+//fucntion to check if alpha-numeric key is not pressed.
+function alphaonly(e,o)
+{
+	if(event.keyCode != 32){
+		if(event.keyCode < 65 || event.keyCode > 122 || event.keyCode == 91 
+		|| event.keyCode == 92 || event.keyCode == 93 || event.keyCode == 94 
+		|| event.keyCode == 95 || event.keyCode == 96){
+			event.returnValue=false;
+			alert("Please use alphabets a-z only.");
+		}
+	}
+	else if(event.keyCode == 32){
+    if(o.value == ""){
+      alert("Incorrect entry. Please enter a valid character.");
+      return false;
+    }
+  }
+}
+//function to restrict user to use single and double quotes
+function noQuotes(e, o){
+  if(event.keyCode == 34 || event.keyCode == 39){
+    alert("Single/Double Quotes are not allowed.");
+    return false;
+  }
+}
+//function to remove the spaces from the string
+function LTrim(str){
+  if(str==null){return null;}
+  for(var i=0;str.charAt(i)==" ";i++);return str.substring(i,str.length);
+}
+function RTrim(str){
+  if(str==null){return null;}
+  for(var i=str.length-1;str.charAt(i)==" ";i--);return str.substring(0,i+1);
+}
+function Trim(str){return LTrim(RTrim(str));}
+//function to show the text in horizontal sliding bar
+var Message="Union Public Service Commission ";
+var place=1;
+function scrollIn() {
+window.status=Message.substring(0, place);
+if (place >= Message.length) {
+place=1;
+window.setTimeout("scrollOut()",300);
+} else {
+place++;
+window.setTimeout("scrollIn()",50);
+}
+}
+function scrollOut() {
+window.status=Message.substring(place, Message.length);
+if (place >= Message.length) {
+place=1;
+window.setTimeout("scrollIn()", 100);
+} else {
+place++;
+window.setTimeout("scrollOut()", 50);
+}
+}
+/*function MakeArrayday(size) {
+this.length = size;
+for(var i = 1; i <= size; i++) {
+this[i] = "";
+}
+return this;
+}
+function MakeArraymonth(size) {
+this.length = size;
+for(var i = 1; i <= size; i++) {
+this[i] = "";
+}
+return this;
+}
+function funClock() {
+if (!document.layers && !document.all)
+return;
+var runTime = new Date();
+var hours = runTime.getHours();
+var minutes = runTime.getMinutes();
+var seconds = runTime.getSeconds();
+var dn = "AM";
+if (hours >= 12) {
+dn = "PM";
+hours = hours - 12;
+}
+if (hours == 0) {
+hours = 12;
+}
+if (minutes <= 9) {
+minutes = "0" + minutes;
+}
+if (seconds <= 9) {
+seconds = "0" + seconds;
+}
+movingtime = "<b>"+ hours + ":" + minutes + ":" + seconds + " " + dn + "</b>";
+if (document.layers) {
+document.layers.clock.document.write(movingtime);
+document.layers.clock.document.close();
+}
+else if (document.all) {
+clock.innerHTML = movingtime;
+}
+setTimeout("funClock()", 1000)
+}
+window.onload = funClock;*/
+//function to show/hide drop down menu of part-I and part-II registration in home page examination form link
+//Contents for menu 1
+var menu1=new Array()
+
+var menu2=new Array()
+menu2[0]='<a href="mainmenu2.php">PART-I Registration</a>'
+menu2[1]='<a href="upload1.php">PART-II Registration</a>'
+
+var menuwidth='165px' //default menu width
+var menubgcolor='lightyellow'  //menu bgcolor
+var disappeardelay=250  //menu disappear speed onMouseout (in miliseconds)
+var hidemenu_onclick="yes" //hide menu when user clicks within menu?
+
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+
+if (ie4||ns6)
+document.write('<div id="dropmenudiv" style="visibility:hidden;width:'+menuwidth+';background-color:'+menubgcolor+'" onMouseover="clearhidemenu()" onMouseout="dynamichide(event)"></div>')
+
+function getposOffset(what, offsettype){
+var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;
+var parentEl=what.offsetParent;
+while (parentEl!=null){
+totaloffset=(offsettype=="left")? totaloffset+parentEl.offsetLeft : totaloffset+parentEl.offsetTop;
+parentEl=parentEl.offsetParent;
+}
+return totaloffset;
+}
+
+function showhide(obj, e, visible, hidden, menuwidth){
+if (ie4||ns6)
+dropmenuobj.style.left=dropmenuobj.style.top=-500
+if (menuwidth!=""){
+dropmenuobj.widthobj=dropmenuobj.style
+dropmenuobj.widthobj.width=menuwidth
+}
+if (e.type=="click" && obj.visibility==hidden || e.type=="mouseover")
+obj.visibility=visible
+else if (e.type=="click")
+obj.visibility=hidden
+}
+
+function iecompattest(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function clearbrowseredge(obj, whichedge){
+var edgeoffset=0
+if (whichedge=="rightedge"){
+var windowedge=ie4 && !window.opera? iecompattest().scrollLeft+iecompattest().clientWidth-15 : window.pageXOffset+window.innerWidth-15
+dropmenuobj.contentmeasure=dropmenuobj.offsetWidth
+if (windowedge-dropmenuobj.x < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure-obj.offsetWidth
+}
+else{
+var topedge=ie4 && !window.opera? iecompattest().scrollTop : window.pageYOffset
+var windowedge=ie4 && !window.opera? iecompattest().scrollTop+iecompattest().clientHeight-15 : window.pageYOffset+window.innerHeight-18
+dropmenuobj.contentmeasure=dropmenuobj.offsetHeight
+if (windowedge-dropmenuobj.y < dropmenuobj.contentmeasure){ //move up?
+edgeoffset=dropmenuobj.contentmeasure+obj.offsetHeight
+if ((dropmenuobj.y-topedge)<dropmenuobj.contentmeasure) //up no good either?
+edgeoffset=dropmenuobj.y+obj.offsetHeight-topedge
+}
+}
+return edgeoffset
+}
+
+function populatemenu(what){
+if (ie4||ns6)
+dropmenuobj.innerHTML=what.join("")
+}
+
+function dropdownmenu(obj, e, menucontents, menuwidth){
+if (window.event) event.cancelBubble=true
+else if (e.stopPropagation) e.stopPropagation()
+clearhidemenu()
+dropmenuobj=document.getElementById? document.getElementById("dropmenudiv") : dropmenudiv
+populatemenu(menucontents)
+
+if (ie4||ns6){
+showhide(dropmenuobj.style, e, "visible", "hidden", menuwidth)
+dropmenuobj.x=getposOffset(obj, "left")
+dropmenuobj.y=getposOffset(obj, "top")
+dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(obj, "rightedge")+"px"
+dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(obj, "bottomedge")+obj.offsetHeight+"px"
+}
+
+return clickreturnvalue()
+}
+
+function clickreturnvalue(){
+if (ie4||ns6) return false
+else return true
+}
+
+function contains_ns6(a, b) {
+while (b.parentNode)
+if ((b = b.parentNode) == a)
+return true;
+return false;
+}
+
+function dynamichide(e){
+if (ie4&&!dropmenuobj.contains(e.toElement))
+delayhidemenu()
+else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+delayhidemenu()
+}
+
+function hidemenu(e){
+if (typeof dropmenuobj!="undefined"){
+if (ie4||ns6)
+dropmenuobj.style.visibility="hidden"
+}
+}
+
+function delayhidemenu(){
+if (ie4||ns6)
+delayhide=setTimeout("hidemenu()",disappeardelay)
+}
+
+function clearhidemenu(){
+if (typeof delayhide!="undefined")
+clearTimeout(delayhide)
+}
+
+if (hidemenu_onclick=="yes")
+document.onclick=hidemenu
+//function to automatically logout after session expires(10 minutes)
+function autoLogout(){
+  setTimeout("location.href='autologout.php'",6000000);
+}
+//function to check whether the enterd email string is a valid string
+function isEmail(str){
+    var regex = /^[-_.a-z0-9]+@(([-_a-z0-9]+\.)+(ad|ae|aero|af|ag|ai|al|am|an|ao|aq|ar|arpa|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|biz|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|com|coop|cr|cs|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|edu|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gh|gi|gl|gm|gn|gov|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|in|info|int|io|iq|ir|is|it|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mil|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|museum|mv|mw|mx|my|mz|na|name|nc|ne|net|nf|ng|ni|nl|no|np|nr|nt|nu|nz|om|org|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|pro|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)|(([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5])\.){3}([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5]))$/i;
+    return regex.test(str);
+}
+//function to strip whitespaces from the begining and end of a tsring
+function trimWSpaces(str){
+   return str.replace(/^\s+|\s+$/g,'');
+}

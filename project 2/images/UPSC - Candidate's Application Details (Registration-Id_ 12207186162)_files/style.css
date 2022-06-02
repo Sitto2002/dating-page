@@ -1,0 +1,351 @@
+body{
+  font-family:verdana, Arial, Helvetica, sans-serif;
+  font-size:12px;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+  scrollbar-base-color: #2d57a3;
+  scrollbar-arrow-color: #e9eef5;
+  scrollbar-DarkShadow-Color: #95aad1;
+  scrollbar-track-color: #c0cde4;
+}
+
+.button{
+  font-family:verdana;
+  font-weight:bold;
+  font-size:12px;
+}
+.button1 {
+width: 70px;
+height: 12px;
+background: #4E9CAF;
+padding-left:15px;
+padding-right:15px;
+padding-top:8px;
+padding-bottom:8px;
+text-align: center;
+border-radius: 5px;
+color: white;
+font-weight: bold;
+text-decoration:none;
+vertical-align:middle;
+}
+.button2 {
+width: 70px;
+height: 12px;
+background: #325BA4;
+padding-left:15px;
+padding-right:15px;
+padding-top:8px;
+padding-bottom:8px;
+text-align: center;
+border-radius: 5px;
+color: white;
+font-size:18px;
+font-weight: bold;
+text-decoration:none;
+vertical-align:middle;
+}
+.adminbutton{
+  font-family:verdana;
+  font-weight:bold;
+}
+.table{
+  font-size:12px;
+  border-collapse:collapse;
+}
+.tablebox{
+  font-size:12px;
+  border-collapse:collapse;
+  background-color:#a4a6ae;
+}
+.subtablebox{
+  font-size:12px;
+  background-color:#ffffff;
+  width:100%;
+  border-collapse:collapse;
+}
+.roundtable{
+  font-size:12px;
+  border-collapse:collapse;
+  border-radius: 1em;
+}
+.menutable{
+  font-size:0.3cm;
+  color:#4266b4;
+  cursor:hand;
+}
+.menutablerow{
+  background-color:#d4ddee;
+}
+.selectmenurow{
+  background-color:#1d48a7;
+  color:#ffffff;
+}
+.genTHRow{
+  background-color:#a8b9d9;
+  height:0.5cm;
+  color:#2d57a4;
+}
+.tablecell{
+	background-color:#aebfdc;
+  color:#FFFFFF;
+  font-weight:bold;
+}
+.tablerow{
+	background-color:#e3e8f3;
+}
+
+.dropdowntable{
+  font-size:12px;
+  border-collapse:collapse;
+  border:0.01cm solid #999999;
+  background-color:#cccccc;
+}
+select{
+  font-family:verdana;
+  font-size:12px;
+}
+.border{
+  border:0.05cm solid #000000;
+}
+a{color:rgb(0,51,204)}
+a:hover{font-weight:bold;}
+a:visited{color:rgb(0,51,204);}
+
+a.list:hover{
+  font-weight:bold;
+  color:rgb(255,255,255);}
+  a.list{text-decoration:none;}
+
+.bodydiv{
+margin-left:4%;
+margin-right:4%;
+margin-top:2%;
+border:0.05cm solid #003F7D;
+}
+.bodydiv1{
+	margin:2%;
+  border:0.05cm solid #003F7D;
+}
+#dropmenudiv{
+  position:absolute;
+  border:1px solid black;
+  border-bottom-width: 0;
+  font:normal 12px Verdana;
+  line-height:18px;
+  z-index:100;
+}
+
+#dropmenudiv a{
+  width: 100%;
+  display: block;
+  text-indent: 3px;
+  border-bottom: 1px solid black;
+  padding: 1px 0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#dropmenudiv a:hover{ /*hover background color*/
+  background-color: rgb(255,204,0);
+}
+
+.formfieldheading{
+  background-color:rgb(153,153,153);
+  color:rgb(255,255,255);
+}
+.admintableheading{
+  font-weight:bold;
+  background-color:#a4a6ae;
+  color:rgb(255,255,255);
+}
+.tablecaptionrow{
+  font-weight:bold;
+  background-color:#5a75a0;
+  color:rgb(255,255,255);
+}
+.dbtableheading{
+  font-weight:bold;
+  background-color:#bdbfc3;
+  color:rgb(255,255,255);
+}
+.dbtableheading_new{
+  border-right: 2px solid #FFFFFF;
+  font-weight:bold;
+  background-color:#bdbfc3;
+  color:rgb(255,255,255);
+}
+.dbtablerow{
+  background-color:#d8dbe0;
+}
+.admindbtablerow{
+  font-weight:bold;
+  background-color:#2D3CA2;
+  color:rgb(255,255,255);
+}
+.divheading{
+  font-weight:bold;
+  width:100%;
+  height:0.7cm;
+  border-bottom:0.05cm solid #003F7D;
+  
+}
+.admindivheading{
+  font-weight:bold;
+  font-size:small;
+  width:100%;
+  height:0.7cm;
+  background-color:#2f58a4;
+  color:#ffffff;
+  padding:0.1cm 0.1cm;
+}
+.note{
+  font-size:0.3cm;
+  color:rgb(153,0,0);
+}
+.headnote{
+  font-size:0.32cm;
+  color:#7e95d5;
+}
+.flashnote{
+  color:red;
+}
+.footnote{
+  font-size:0.3cm;
+  color:rgb(102,102,153);
+}
+.viewrow{
+  background-color:#e1e1ff;
+}
+.admineditlist{
+  padding:0.2cm o.2cm;
+}
+/*round corner box*/
+.bl {background: url(images/bl1.gif) 0 100% no-repeat #bcc8d6; width: 20em}
+.br {background: url(images/br1.gif) 100% 100% no-repeat}
+.tl {background: url(images/tl1.gif) 0 0 no-repeat}
+.tr {background: url(images/tr1.gif) 100% 0 no-repeat; padding:10px}
+.clear {font-size: 1px; height: 1px}
+/*set backgroung image of header*/
+#divbackimage1{
+  background-image: url(images/headpic2.gif); 
+  background-repeat: repeat-x; 
+}
+#divbackimage2{
+  background-image: url(images/headbox.jpg); 
+  background-repeat: repeat-x; 
+}
+#divbackimg3{
+  background-image: url(images/headround.jpg); 
+  background-repeat: no-repeat; 
+}
+#headimg{
+  background-image: url(images/upsc_masthead.jpg); 
+  background-repeat: no-repeat;
+}
+.showspan{
+  cursor:hand;
+}
+.linkspan{
+  cursor:hand;
+  color:rgb(0,51,204);
+}
+.headingspan{
+  color:rgb(51,51,204);
+}
+.seldate{
+  background-color:#cad5e7;
+}
+.actionmsg{
+  font-size:12px;
+  color:rgb(102,153,204);
+}
+.errorbox{
+  border:0.05cm solid rgb(204,51,0);
+  color:rgb(51,51,102);
+  padding:0.2cm;
+}
+.Pageheading{
+  margin-top:0.3cm;
+  font-size:0.45cm;
+}
+.mrgntohead{
+  margin-top:1.5cm;
+}
+caption{
+  padding:0.1cm;
+}
+.selInstruct{
+  background-color:#cdd8f7;
+  color:#7e95d5;
+}
+/*heading for the verification row by the candidate*/
+.verifyRow{
+  font-weight:bold;
+  color:#FFFFFF;
+  background-color:#003F7D;
+}
+/*table for the veification data filled by the candidate in form4.php*/
+.verifyTable{
+  background-color:#e3e8f3;
+  border:solid #FFFFFF;
+}
+/*declaration heading*/
+.declaration{
+  padding:0.2cm 0.5cm;
+  background-color:#003F7D;
+  color:#FFFFFF;
+  border:0.05cm solid #FFFFFF;
+  height:8px;
+  width=5cm;
+}
+/*small and colore dbutton*/
+.smallbutton{
+  height:0.5cm;
+  font-size:xx-small;
+  font-family:verdana;
+  font-weight:bold;
+  cursor:hand;
+  background-color:#2f58a4;
+  color:#ffffff;
+  border:0.01cm solid rgb(51,51,102);
+}
+/*span to give heading in child window*/
+.childwspan{
+  background-color:#cdd8f7;
+  color:#7e95d5;
+  padding:0.05cm 0.05cm;
+  border:0.01cm solid #2f58a4;
+}
+/*box to show the message when the examination data list is empty in admin module*/
+.noDataMsgBox{
+  background-color:#e3e8f3;
+  color:#243462;
+  font-weight:bold;
+  border:0.02cm solid #3c5087;
+  height:1cm;
+  width:50%;
+  padding:0.2cm 0.2cm;
+}
+/*div to show the serverside validation error*/
+.validationerror{
+  border:0.05cm solid rgb(204,51,0);
+  font-weight:bold;
+  font-size:0.4cm;
+  padding:0.2cm;
+}
+.errormsgbox{
+  border:0.02cm solid rgb(204,51,0);
+  color:rgb(51,51,102);
+  padding:0.1cm;
+  margin-top:1cm;
+  margin-left:0.5cm;
+  margin-right:0.5cm;
+}
+.tableprint{
+  font-family:verdana, Arial, Helvetica, sans-serif;
+  font-size:12px;
+  border-collapse:collapse;
+}
+

@@ -1,0 +1,496 @@
+
+<!-- saved from url=(0045)https://upsconline.nic.in/viewapplication.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>UPSC -  Candidate's Application Details (Registration-Id: 12207186162)</title>
+  <link rel="stylesheet" type="text/css" href="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/style.css">
+  <link rel="stylesheet" href="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/calendar.css" media="screen">
+  <script type="text/javascript" src="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/calendar.js.download"></script>
+  <script type="text/javascript" src="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/functions.js.download"></script></head><body><div id="dropmenudiv" style="visibility:hidden;width:165px;background-color:lightyellow" onmouseover="clearhidemenu()" onmouseout="dynamichide(event)"></div>
+  <script language="javascript">
+var BM = 2; // button middle
+var BR = 3; // button right
+var msg ="For security reasons,Right Click is not allowed!";
+
+function mouseDown(e)
+{
+  try { if (event.button==BM||event.button==BR) {return false;} }
+  catch (e) { if (e.which == BR) {return false;} }
+}
+document.oncontextmenu = function() {// alert(msg);
+return false; }
+document.ondragstart   = function() { //alert(msg);
+return false; }
+document.onmousedown   = mouseDown;
+
+var message="For security reasons,Right Click is not allowed!"; // Message for the alert box
+
+// Don't edit below!
+
+function click(e) {
+if (document.all) {
+if (event.button == 2) {
+//alert(message);
+return false;
+}
+}
+if (document.layers) {
+if (e.which == 3) {
+//alert(message);
+return false;
+}
+}
+}
+if (document.layers) {
+document.captureEvents(Event.MOUSEDOWN);
+}
+document.onmousedown=click;
+//////////F12,F5,ctrl+r disable code////////////////////////
+    document.onkeypress = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+           //alert('No F-12');
+            return false;
+        }else if(event.keyCode == 116){
+		    return false;
+		}else if(event.keyCode == 8){
+		    return false;
+		}else if(event.keyCode == 46){
+		    return false;
+		}else if(event.keyCode == 82){
+		    if (event.ctrlKey){
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		}
+    }
+    document.onmousedown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }else if(event.keyCode == 116){
+		    return false;
+		}else if(event.keyCode == 8){
+		    return false;
+		}else if(event.keyCode == 46){
+		    return false;
+		}else if(event.keyCode == 82){
+		    if (event.ctrlKey){
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		}
+    }
+document.onkeydown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }else if(event.keyCode == 116){
+		    return false;
+		}else if(event.keyCode == 8){
+		    return false;
+		}else if(event.keyCode == 46){
+		    return false;
+		}else if(event.keyCode == 82){
+		    if (event.ctrlKey){
+                event.returnValue = false;
+                event.keyCode = 0;
+                return false;
+            }
+		}
+    }
+/////////////////////end///////////////////////
+</script>
+  <script language="javascript">
+  function validation(){
+    if(document.appview){
+      var d = document.forms[0].dobdate;
+      var m = document.forms[0].dobmonth;
+      var y = document.forms[0].dobyear;
+      if(document.appview.reg_id.value == ""){
+          alert("Please enter a valid Registration-Id")
+          document.appview.reg_id.focus()
+          return
+      }
+      else if(document.forms[0].dobdate.value == 0 || document.forms[0].dobmonth.value == 0 ||
+      document.forms[0].dobyear.value == 0)
+      {
+      	alert("Please enter your Date of Birth.")
+      	document.forms[0].dobdate.focus();
+      }
+      else if(checkDate(d.value,m.value,y.value) == 0){
+        alert("Date of Birth entered by you is not a valid date.\nPlease enter a valid date.")
+        document.forms[0].dobdate.focus();
+      }
+ //     else if(document.forms[0].PIQ.value == 0)
+  //    {
+ //     	alert("Please select the Personal Identification Question")
+ //     }
+  //    else if(document.forms[0].PIQanswer.value == "")
+   //   {
+ //     	alert("Please give the answer to your Personal Identification Question")
+   //     document.forms[0].PIQanswer.focus()
+  //    }
+      else{
+        document.forms[0].dob.value = formDate(d.value,m.value,y.value)
+        document.appview.check_regid.value = 1
+        document.appview.submit()
+      }
+    }
+  }
+  function reload(){
+	img = document.getElementById("capt");
+	img.src="gen_captcha.php?rand_number=" + Math.random();
+	if(document.getElementById("phrase").value != ''){
+		document.getElementById("phrase").value= '';
+	}
+}
+function mypopup(url,width,height)
+ {
+   width=window.screen.width;
+   height=window.screen.height;
+   var fullscreen = (document.all) ? "no" : "yes";
+   mywindow = window.open (url,"ranjeet","menubar=no,location=no,status=no,scrollbars=1,resizable=1,copyhistory=no,replace=false,toolbar=no,width="+width+",height="+height+",fullscreen=" + fullscreen);
+   mywindow.moveTo(0,0);
+   mywindow.focus();
+ }
+</script>
+
+
+<img src="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/upschead.jpg" width="100%"><table class="table" style="background:url(images/headbg1.jpg) no-repeat" align="right"><tbody><tr style="color:#FFFFFF"><td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://upsconline.nic.in/index.php" style="text-decoration:none;color:#FFFFFF"><b>&nbsp;&nbsp;&nbsp;&nbsp;Home / मुखपृष्ठ</b></a></td></tr></tbody></table><div class="bodydiv" style="margin-top:0.8cm"><div align="center" style="background-color:#003F7D;color:#FFFFFF;padding:0.1cm"><b>Application details of Registration-Id: 12207186162 for National Defence Academy &amp; Naval Academy Examination (I) - 2022</b><br>पंजीकरण संख्या 12207186162 <strong>राष्ट्रीय रक्षा अकादमी एवं नौसेना अकादमी परीक्षा (I)-2022 के लिए आवेदन पत्र </strong></div><p align="center">    	</p><p align="center"><font size="4px" color="red"><b>
+	</b></font>
+	</p>
+<table align="center" width="85%" border="1" class="table">
+<tbody><tr><td>
+    <table align="center" cellpadding="3" style="font-size:9px;" width="100%" cellspacing="2" border="0">
+    <caption><b>PART - I / भाग - I</b></caption>
+    <tbody><tr class="tablerow">
+        <td width="50%">
+                Name / नाम :        </td>
+        <td width="50%">
+        DIVYANSHU AGRAHARI        </td>
+    </tr>
+    
+    <tr class="tablerow">
+        <td>
+                Gender / लिंग :
+        </td>
+        <td>
+        Male        </td>
+    </tr>
+    <tr class="tablerow">
+            <td>
+Date of Birth /  जन्म तिथि :        </td>
+        <td>
+        12-09-2003        </td>
+    </tr>
+    <tr class="tablerow">
+            <td>
+                Father's Name / पिता का नाम :
+        </td>
+        <td>
+        MANOJ AGRAHARI        </td>
+    </tr>
+    <tr class="tablerow">
+            <td>
+                Mother's Name / माता का नाम :
+        </td>
+        <td>
+        MANORAMA DEVI        </td>
+    </tr>
+    <tr class="tablerow">
+            <td>
+                Nationality / नागरिकता :
+        </td>
+        <td>
+        Indian        </td>
+    </tr>
+	 <tr class="tablerow">
+      <td>
+Marital Status / वैवाहिक स्थिति :      </td>
+      <td>
+      Unmarried      </td>
+    </tr>
+         <tr class="tablerow">
+            <td>
+                Community / समुदाय :
+        </td>
+        <td>
+        General        </td>
+    </tr>
+		<tr class="tablerow">
+      <td>
+Do you belong to Minority / क्या आप अल्पसंख्यक हैं :      </td>
+      <td>
+        No      </td>
+	      </tr><tr class="tablerow">
+            <td>
+Fee Remission Claimed / शुल्क माफ :        </td>
+        <td>
+        No        </td>
+    </tr>
+    <tr class="tablerow">
+            <td>
+                Address / पता :
+        </td>
+        <td>
+        KOIRAUNA<br>KOIRAUNA<br>KALIKA NAGAR KOIRAUNA BHADOHI<br>District/City : Bhadohi<br>State/UT : Uttar Pradesh<br>Pincode : 221309        </td>
+    </tr>
+			 <tr class="tablerow">
+            <td>
+               Mobile No. / मोबाइल नं :
+        </td>
+        <td>
+        9935663516 
+        </td>
+    </tr>
+		
+	
+    <tr class="tablerow">
+        <td>
+e-mail / ई-मेल :        </td>
+        <td>
+        agraharimanoj181@gmail.com        </td>
+    </tr>
+		
+	            	<tr class="tablerow">
+        <td>
+Educational Qualification / शैक्षिक योग्यता :        </td>
+        <td>
+         Passed 12th class of 10 plus 2 pattern of school education or an equiv. exam. with Physics, Chemistry and Maths among the subjects.        </td>
+    </tr>
+   <!--<tr  class="tablerow">
+    <td>
+     Having read the OM, do you want to opt for disclosure of marks alongwith other details <br/>
+	  कार्यालय ज्ञापन पढ़ने के बाद, क्या आप अपने स्कोर के साथ अन्य विवरण को सार्वजनिक रूप से उपलब्ध करना चाहते है  :
+    </td>
+    <td>
+         </td>
+</tr>-->
+		
+	<!-- Identity Card Details Shown For GEOL , ISS , IES (Starts)-->
+
+		
+ 	
+	<!-- Identity Card Details Shown For GEOL , ISS , IES (Ends) -->
+	
+					<tr class="tablerow">
+      <td>
+        Photo Identity Card / फोटो पहचान पत्र &nbsp;:
+      </td>
+        <td>
+		Aadhaar Card / VID of Aadhaar Card&nbsp;&nbsp;-&nbsp;<b>XXXXXXXX1214</b><span align="justify" class="note"><br><b><u>Note</u>: Please provide the photo identity card number in Online Application Form and remember to carry the same at the time of Personality Test/Examination venue.</b></span><b>			  
+      </b></td>
+    </tr>
+		
+	
+	<!-- 
+	<tr class="tablerow">
+      <td >
+        Candidate Uploaded photo identity card / उम्मीदवार की अपलोड की गयी फोटो पहचान पत्र &nbsp:
+      </td>
+        <td nowrap>
+					</td>
+    </tr>
+    -->
+ 	<tr class="tablerow">
+        <td>
+         Preferences of NDA &amp; NA Examination / वरीयता एनडीए और एनए  परीक्षा के लिए:
+        </td>
+        <td nowrap="">
+         Army: 2 | Navy: 3 | Air Force: 1 | Naval Academy: 4        </td>
+    </tr>
+ 	<tr class="tablerow">
+        <td>
+        Did you ever fail in CPSS(Computerised Pilot Selection System) / PABT (Pilot Aptitude Battery Test) Examination of Air Force / क्या आप कभी वायु सेना की परीक्षा सी पी एस एस (कम्प्यूटरीकृत पायलट चयन प्रणाली) / पी ए बी टी (पायलट एप्टीट्यूड बैटरी टेस्ट) में असफल रहे हैं:
+        </td>
+        <td nowrap="">
+         No        </td>
+    </tr>
+	<tr class="tablerow">
+        <td>
+        Would you like to be considered for Air Force GDO (Ground Duty Officer) / क्या आप वायु सेना के जी डी ओ (ग्राउंड ड्यूटी ऑफिसर) के लिए विचार किया जाना पसंद करेंगे :
+        </td>
+        <td nowrap="">
+         Yes        </td>
+    </tr>
+ <!--    <tr class="tablerow">
+        <td>
+         Marital Status
+        </td>
+        <td>-->
+         <!--        </td>
+    </tr>-->
+    <tr class="tablerow">
+        <td>
+Whether Student of Sainik/Military School / क्या आप सैनिक / मिलिटरी स्कूल के विद्यार्थी हैं :        </td>
+        <td>
+         No        </td>
+    </tr>
+    <tr class="tablerow">
+        <td>
+        <p align="justify">
+ Whether Wards of JCO/NCO/Other Rank officers and studying in Sainik Military School <br>
+	  क्या आप जेसीओ/एनसीओ/अन्य‍ रैंक के अधिकारियों के वार्ड हैं और सैनिक/मिलिटरी स्कूल के विद्यार्थी हैं         </p>
+        </td>
+        <td>
+         No        </td>
+    </tr>
+    	
+	
+	<!--- Subscribe Detail Starts-->
+	
+		
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+    <p></p>
+        <p align="center" style="page-break-before:always;"><b style="font-size:10px;">PART - II / भाग - II<br>
+    [Fee Payment Details, Photograph, Signature, Photo Identity Card Document &amp; Examination Centre of
+    Registration-Id: 12207186162]<br>
+    [पंजीकरण संख्या :12207186162 का
+शुल्क भुगतान विवरण, फोटोग्राफ, हस्ताक्षर, फोटो पहचान पत्र दस्तावेज़ और परीक्षा केंद्र]</b></p>
+
+ <table width="85%" class="table" border="1" bordercolor="#999999" align="center" cellpadding="8">
+ <tbody><tr class="tablerow"> 
+	<td>
+  <table width="98%" class="table" border="1" bordercolor="#999999" align="center">
+    <tbody><tr class="formfieldheading">
+    <td colspan="4" style="color:#FFFFFF;" background="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/bg1.gif"> 
+      <b>Transaction Acknowledgement  / 
+		
+		लेनदेन पावती  	  </b>
+    </td>
+  </tr>
+  <tr class="tablerow">
+    <td width="260px">
+      <b>Registration-Id / पंजीकरण संख्या : </b>
+    </td>
+    <td colspan="3">
+    <strong> 12207186162</strong>
+    </td>
+  </tr>
+
+ <tr class="tablerow">
+    <td width="260px">
+      <b>Transaction-Id / लेन-देन  संख्या: </b>
+    </td>
+    <td colspan="3"><font color="#0033FF">202200622246915 &nbsp;&nbsp;   </font>
+    </td>
+  </tr>
+  <tr class="tablerow">
+    <td width="260px">
+      <b>Transaction Date / लेनदेन की तिथि : </b>
+    </td>
+    <td colspan="3"><font color="#0033FF">06-01-2022     </font>
+    </td>
+  </tr>
+  <tr class="tablerow">
+    <td width="350px"> 
+      <b>Fee Paid (in Rs) / भुगतान किया गया शुल्क (रु में) :</b>
+    </td>
+    <td colspan="3"><font color="#0033FF">100      </font>
+    </td>
+  </tr>
+  
+  <tr class="tablerow">
+    <td width="260px">
+      <b>Agency Name / एजेंसी का नाम : </b>
+    </td>
+    <td colspan="3"><font color="#0033FF">State Bank of India     </font>
+    </td>
+  </tr>
+    <tr class="tablerow">
+    <td width="260px">
+      <b>Mode of Payment / भुगतान का माध्यम : </b>
+    </td>
+    <td colspan="3"><font color="#0033FF">Credit/Debit Card      </font>
+    </td>
+  </tr>
+      <tr>
+    <td colspan="2" style="color:#FFFFFF;">
+	  <table width="100%" class="table" border="1" bordercolor="#999999" align="center">
+		<tbody><tr>
+			<td width="20%" align="center" style="color:#FFFFFF;" background="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/bg1.gif"><b> Photograph / फोटोग्राफ</b>
+			&nbsp; &nbsp; &nbsp; &nbsp; 
+			</td>
+			<td width="20%" align="center" style="color:#FFFFFF;" background="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/bg1.gif"><b> Signature / हस्ताक्षर </b>
+			&nbsp; &nbsp; &nbsp; &nbsp; 
+			</td>			
+			<td width="20%" align="center" style="color:#FFFFFF;" background="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/bg1.gif"><b>Photo Identity Card /<br> फोटो पहचान पत्र</b>
+			</td>
+			<td width="20%" align="center" style="color:#FFFFFF;" background="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/bg1.gif"><b>Examination Centre / परीक्षा केंद्र</b>
+			</td>
+		</tr>
+	  </tbody></table>
+    </td>	
+  </tr>
+  <tr class="tablerow">
+    <td colspan="2" style="color:#FFFFFF;">
+	  <table border="1" width="100%" class="table" bordercolor="#999999" align="center" cellpadding="8">
+		<tbody><tr>
+			<td align="center" width="20%">
+			<img src="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/12207186162p.jpg" width="100" height="120" border="1" alt="photograph">			 
+				
+			</td>
+			<td align="center" width="20%">
+			 
+				<img src="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/12207186162s.jpg" width="120" height="120" border="2" alt="Signature"> 
+			</td>
+			<td align="center" width="20%">
+				Document Uploaded
+			</td>
+			<td align="center" width="20%">  
+				<table width="160" height="76" cellpadding="2" class="table" style="font-size:9px;">
+					<tbody><tr>
+						<td align="center" style="font-size:14px;">
+							Prayagraj(Allahabad)						</td>
+					</tr>
+				</tbody></table>
+			</td>
+		</tr>
+	  </tbody></table>
+	</td>
+   </tr>
+	  </tbody></table>
+ </td>	
+</tr>
+   </tbody></table>
+
+<!-- declaration starts -->
+<br><br>
+
+<table align="center" cellpadding="3" style="font-size:11px; border:thin;" width="85%" cellspacing="2" border="1" bordercolor="#003F7D">
+    <tbody><tr class="tablerow"><td><center style="font-size:14px;"><strong>Declaration</strong></center><br>
+    <b>1.</b> I hereby declare that all statements made in this application are true, complete and correct to the best of my knowledge
+              and belief. In the event of any information being found false or incorrect, or ineligibility being detected before or
+              after the examination, action can be taken against me by the Commission as per the provision given in the  notification.
+       <br> मैं  एतद्वारा घोषित करता/करती हूं कि इस आवेदन में मेरे द्वारा दिए गए सभी कथन मेरी जानकारी  और विश्वास के अनुसार सही हैं। यदि कोई सूचना गलत अथवा असत्य पाई जाती है 
+			अथवा परीक्षा से पहले अथवा इसके बाद अपात्रता सामने आने पर आयोग द्वारा अधिसूचना में दिए गए प्रावधान के अंतर्गत मेरे विरुद्ध कार्रवाई की जा सकती है।<br><br>
+    <b>2.</b> I have read the provisions in the rules and the notice of the Commission carefully and hereby undertake to abide by them. I further declare that 
+      I fulfil all the conditions of eligibility regarding age limits, educational qualifications etc. prescribed for admission to the examination.<br>
+			मैंने नियमों और आयोग के नोटिस में दिए गए प्रावधानों को ध्यानपूर्वक पढ़ लिया है और एतद्वारा इनके अनुपालन का वचन देता/देती हूं। 
+			मैं यह भी घोषित करता/करती हूं कि मैं, परीक्षा में प्रवेश हेतु निर्धारित आयु सीमा, शैक्षिक योग्ययता आदि के संबंध में पात्रता की सभी शर्तों को पूरा करता हूं। <br><br>
+    <b>3.</b> I have informed my Head of Office/Department in writing that I am applying for this examination.*
+            <br>* Applicable for those who are already in government service/similar organizations or government owned industrial undertakings whether in permanent 
+            or temporary capacity or as work charged employees other than casual or daily rated employees or those serving under public
+            enterprises.
+<br>
+			  मैंने अपने कार्यालय/ विभाग के अध्यक्ष को लिखित में सूचित कर दिया है कि मैं इस परीक्षा के लिए आवेदन कर रहा / रही हूं। *<br>
+                  * उन उम्मीदवारों के मामले में लागू, जो पहले से ही सरकारी सेवा/समान संगठन अथवा सरकारी स्वामित्वं वाले औद्योगिक उपक्रमों में स्थायी अथवा अस्थायी रूप से अथवा अनियमित अथवा दैनिक भत्ते पर कार्यरत कर्मचारियों की श्रेणी से इतर कार्य आधारित भत्ते पर कार्यरत कर्मचारी हैं अथवा सार्वजनिक क्षेत्रों के उद्यमों में कार्यरत कर्मी हैं। 
+      <br><br>
+   </td>
+   </tr></tbody></table>
+<!-- declaration ends-->
+
+<p align="center">
+      <a href="https://upsconline.nic.in/printapp.php?tno=c0Vrd2Z1eENIeXBCSjNxcUptSThmdz09" style="cursor:hand" title="Print Preview" target="\blank"><b>Print Preview / प्रिंट पूर्वावलोकन</b></a>
+  </p>
+
+    </div>
+<p align="center"><img src="./UPSC - Candidate&#39;s Application Details (Registration-Id_ 12207186162)_files/footer.gif" style="margin-bottom:0.5cm"></p>
+</body></html>

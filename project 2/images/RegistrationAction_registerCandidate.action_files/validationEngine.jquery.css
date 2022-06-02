@@ -1,0 +1,89 @@
+.inputContainer {
+	position: relative;
+	float: left;
+}
+
+.formError {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	display: block;
+	z-index: 5000;
+	color: red;
+}
+
+.ajaxSubmit {
+	padding: 20px;
+	background: #55ea55;
+	border: 1px solid #999;
+	display: none
+}
+
+.formError .formErrorContent {
+	width: 150px;
+	font-family: tahoma;
+	font-size: 11px;
+}
+
+.greenPopup .formErrorContent {
+	background: #33be40;
+}
+
+.blackPopup .formErrorContent {
+	background: #393939;
+	color: #FFF;
+}
+
+.formError .formErrorArrow {
+
+}
+
+body[dir='rtl'] .formError .formErrorArrow,body.rtl .formError .formErrorArrow
+	{
+	margin: -2px 13px 0 0;
+}
+
+.formError .formErrorArrowBottom {
+}
+
+.formError .formErrorArrow div {
+}
+
+.formError .formErrorArrowBottom div {
+}
+
+.greenPopup .formErrorArrow div {
+}
+
+.blackPopup .formErrorArrow div {
+}
+
+.formError .formErrorArrow .line10 {
+}
+
+.formError .formErrorArrow .line9 {
+}
+
+.formError .formErrorArrow .line8 {
+}
+
+.formError .formErrorArrow .line7 {
+}
+
+.formError .formErrorArrow .line6 {
+}
+
+.formError .formErrorArrow .line5 {
+}
+
+.formError .formErrorArrow .line4 {
+}
+
+.formError .formErrorArrow .line3 {
+}
+
+.formError .formErrorArrow .line2 {
+}
+
+.formError .formErrorArrow .line1 {
+}
